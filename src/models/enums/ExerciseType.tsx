@@ -1,9 +1,9 @@
 export enum ExerciseType {
-  UpperBody,
-  LowerBody,
-  FullBody,
-  UpperBodyIsolation,
-  LowerBodyIsolation,
-  Aerobic,
-  Anarobic,
+  UpperBody = "UpperBody",
+  LowerBody = "LowerBody",
+  FullBody = "FullBody",
+  UpperBodyIsolation = "UpperBodyIsolation",
+  LowerBodyIsolation = "LowerBodyIsolation",
+  Aerobic = "Aerobic",
+  Anarobic = "Anarobic",
 }
