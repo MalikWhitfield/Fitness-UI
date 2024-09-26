@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
+import { Exercise } from "./models/Exercise";
 
 function App() {
   const [exercises, setExercises] = useState([]);
@@ -17,7 +18,7 @@ function App() {
         <h1>Reactivities</h1>
         <ul>
           {exercises ? (
-            exercises.map((exercise: any) => (
+            exercises.map((exercise: Exercise) => (
               <>
                 <li key={exercise.id}>{exercise.name}</li>
               </>
