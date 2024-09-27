@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
-import { Exercise } from "./models/Exercise";
+import { Exercise } from "./models/interfaces/Exercise";
+import { Header, List } from "semantic-ui-react";
+import { UserExerciseForm } from "./forms/UserExerciseForm";
+import { UserForm } from "./forms/UserForm";
 
 function App() {
   const [exercises, setExercises] = useState([]);
@@ -15,12 +18,16 @@ function App() {
   return (
     <>
       <div>
-        <h1>Reactivities</h1>
-        <ul>
-          {exercises ? (
+        <UserExerciseForm props="hello" />
+        <UserForm props={"hello"} />
+        <Header as="h2" icon="users" content="All Exercises" />
+        <List>
+          {exercises.length > 0 ? (
             exercises.map((exercise: Exercise) => (
               <>
-                <li key={exercise.id}>{exercise.name}</li>
+                <List.Item key={exercise.id}>{exercise.name}</List.Item>
+                <p>{exercise.description}</p>
+                <p>Exercise Type: {exercise.exerciseType}</p>
               </>
             ))
           ) : (
@@ -28,7 +35,7 @@ function App() {
               <h1>No Exercises</h1>
             </>
           )}
-        </ul>
+        </List>
       </div>
     </>
   );

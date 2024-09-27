@@ -1,5 +1,5 @@
-import { ExerciseType } from "./enums/ExerciseType";
-import { MuscleGroup } from "./enums/MuscleGroup";
+import { ExerciseType } from "../enums/ExerciseType";
+import { MuscleGroup } from "../enums/MuscleGroup";
 
 export interface Exercise {
   id: string;
