@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 import { Exercise } from "./models/interfaces/Exercise";
-import { Header, List } from "semantic-ui-react";
 import { UserExerciseForm } from "./forms/UserExerciseForm";
 import { UserForm } from "./forms/UserForm";
+import { CardHeader, List, ListItem } from "@mui/material";
 
 function App() {
   const [exercises, setExercises] = useState([]);
@@ -20,12 +20,12 @@ function App() {
       <div>
         <UserExerciseForm props="hello" />
         <UserForm props={"hello"} />
-        <Header as="h2" icon="users" content="All Exercises" />
+        <CardHeader as="h2" icon="users" content="All Exercises" />
         <List>
           {exercises.length > 0 ? (
             exercises.map((exercise: Exercise) => (
               <>
-                <List.Item key={exercise.id}>{exercise.name}</List.Item>
+                <ListItem key={exercise.id}>{exercise.name}</ListItem>
                 <p>{exercise.description}</p>
                 <p>Exercise Type: {exercise.exerciseType}</p>
               </>
